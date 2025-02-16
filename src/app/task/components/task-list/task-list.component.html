@@ -1,0 +1,33 @@
+<div class="row">
+    <div *ngFor="let task of tasks" class="col-md-6 col-lg-4 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text">Descripción: {{ task.lineDescription }}</p>
+                <button class="btn btn-primary btn-sm">Ver más</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div>
+    <h2 *ngIf="deletedTask; else nothingDeleted">Tarea borrada: <small class="text-danger">{{deletedTask}}</small></h2>
+
+    <ng-template #nothingDeleted>
+        <h3>No ha borrado nada</h3>
+    </ng-template>
+
+
+    <ol class="mt-2 list-group">
+        <li *ngFor="let task of tasks" class="list-group-item">
+            {{ task.title + ' - ' + task.content }}
+        </li>
+    </ol>
+</div> -->
+    <button *ngIf="tasks.length>0; else noTasks" (click)="deleteLastTask()" class="btn btn-info"> Eliminar última tarea </button>
+
+    <ng-template #noTasks>
+        <p class="font-weight-bold">No hay tareas</p>
+    </ng-template>
+    
+

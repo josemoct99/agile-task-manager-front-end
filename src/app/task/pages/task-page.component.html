@@ -1,0 +1,10 @@
+<h1>Tareas</h1>
+
+<div class="row">
+    <div class="col-4">
+        <app-add-task (onTaskAdded)="addTask($event)"></app-add-task>
+    </div>
+    <div class="col-8">
+        <app-task-list [tasks]="fetchedTasks"></app-task-list>
+    </div>
+</div>

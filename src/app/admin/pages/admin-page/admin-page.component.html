@@ -1,0 +1,15 @@
+<h2>Bienvenido {{ userName }}</h2>
+<p>Tu edad aproximada es {{ calculateAge(1999) }}</p>
+
+<div *ngIf="!pointsAssigned" class="py-5">
+    <button (click)="increaseAvailablePoints()" class="btn btn-primary mx-2">Sumar puntos
+        disponibles</button>
+    <button (click)="decreaseAvailablePoints()" class="btn btn-primary mx-2">Restar puntos
+        disponibles</button>
+</div>
+<div class="py-4">
+    <p class="fw-semibold">Puntos disponibles: {{ availablePoints }}</p>
+    <p class="fw-semibold">Límite de puntos de este sprint {{ pointsLimit }}</p>
+</div>
+<button *ngIf="!pointsAssigned" (click)="assignPoints()" class="btn btn-success mx-2">Aceptar
+    cambios</button>
